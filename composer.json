@@ -1,5 +1,5 @@
 {
-    "name": "maximus/api",
+    "name": "bmagnomax/maximus-api",
     "type": "library",
     "description": "A package for handling APIs in the Laravel applications.",
     "keywords": ["laravel", "api", "package", "maximus"],
@@ -21,7 +21,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "MaximusApi\\": "src/"
+            "MaximusApi\\": "./src/"
         }
     },
     "minimum-stability": "stable",
