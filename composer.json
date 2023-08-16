@@ -21,7 +21,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "MaximusApi\\": "./src/"
+            "MaximusApi\\": "src/"
         }
     },
     "minimum-stability": "stable",
