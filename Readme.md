@@ -17,6 +17,7 @@ return [
     'response_format' => 'json', // Opções: 'json' ou 'object'
     'path_models' => 'App\Models\\'
 ];
+```
 
 # Endpoints Disponíveis
 ## Pesquisa com Relacionamentos e Paginação
@@ -34,9 +35,11 @@ page (opcional): Número da página para paginação. Padrão é 1.
 
 Exemplo de Requisição:
 
+
 GET /api/users/searchwith?relationships=posts,comments&searchFields=name:John,age&orderBy=name&sort=asc&page=2
 
-Exemplo de Resposta:
+
+##Exemplo de Resposta:
 
 {
   "current_page": 2,
