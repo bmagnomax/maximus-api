@@ -1,4 +1,4 @@
-# API Maximus
+# Maximus API 
 
 Bem-vindo ao pacote de API Maximus. Aqui você encontrará informações detalhadas sobre a configuração, os endpoints disponíveis e como usá-los.
 
@@ -191,7 +191,7 @@ Descrição: Retorna uma lista de recursos com suporte para pesquisa avançada, 
     
 
 **Considerações Finais**
-    Esta documentação cobre os principais endpoints disponíveis na API do sistema Maximus. Você pode ajustar os parâmetros de consulta para atender às suas necessidades de pesquisa, filtragem e ordenação. Lembre-se de ajustar as configurações em config/maximus.php conforme necessário.
+    Esta documentação cobre os principais endpoints disponíveis no pacote Maximus Api. Você pode ajustar os parâmetros de consulta para atender às suas necessidades de pesquisa, filtragem e ordenação. Lembre-se de ajustar as configurações em config/maximus.php conforme necessário.
 
 Fique à vontade para explorar mais funcionalidades da API e adaptá-la conforme suas necessidades. Para quaisquer dúvidas ou problemas, não hesite em entrar em contato com nossa equipe de suporte.
 
