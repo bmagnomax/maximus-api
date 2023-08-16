@@ -17,6 +17,8 @@
         "illuminate/database": "^8.0|^9.0",
         "illuminate/http": "^8.0|^9.0"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "MaximusApi\\": "src/"
