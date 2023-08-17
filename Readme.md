@@ -4,15 +4,28 @@ Bem-vindo ao pacote de API Maximus. Aqui você encontrará informações detalha
 
 ## Instalação 
 
-Para começar a usar o pacote `maximus/api` em seu projeto Laravel, siga estas etapas:
+Para começar a usar o pacote `bmagnomax/maximus-api` em seu projeto Laravel, siga estas etapas:
 
 1. Instale o pacote via Composer:
 
    ```bash
-   composer require maximus/api
+   composer require bmagnomax/maximus-api
 
 ----------------
 ## Configuração
+
+No arquivo `config/app.php`, adicione o seguinte no array `providers`:
+
+    'providers' => [
+        // ...
+        MaximusApi\MaximusApiServiceProvider::class,
+    ],
+    
+Para publicar o arquivo de configuração `maximus.php`, execute o comando artesão abaixo:
+```bash
+php artisan vendor:publish --provider="MaximusApi\MaximusApiServiceProvider"
+```
+O arquivo `maximus.php` será então criado dentro do seu diretório  `config`.
 
 Antes de usar a API, você precisará configurar o arquivo `config/maximus.php` com os modelos que deseja expor e outras configurações. Abaixo está um exemplo de configuração:
 
@@ -28,19 +41,25 @@ return [
     'path_models' => 'App\Models\\'
 ];
 ```
-No arquivo `config/app.php`, adicione o seguinte no array `providers`:
+**Exemplo do controller para o model User:**
 
-    'providers' => [
-        // ...
-        MaximusApi\MaximusApiServiceProvider::class,
-    ],
+    <?php
+        namespace  App\Http\Controllers;
+        use App\Models\User;
+        use MaximusApi\Controllers\AbstractController;
+        use MaximusApi\Service\ApiService;
+        class  UserController  extends  AbstractController
+        {
+        	protected  $apiService;
+        	public  function  __construct(ApiService  $apiService)
+        	{
+        		$apiService->setModel(new  User());
+        		parent::__construct($apiService);
+        	}
+        }
+        ?>
 
-Ainda no arquivo `config/app.php`, adicione o seguinte no array `aliases`:
 
-    'aliases' => [
-        // ...
-        'ApiService' => MaximusApi\Service\ApiService::class,
-    ],
 
 
 # Endpoints Disponíveis
@@ -218,6 +237,3 @@ Descrição: Retorna uma lista de recursos com suporte para pesquisa avançada, 
     Esta documentação cobre os principais endpoints disponíveis na API do sistema Maximus. Você pode ajustar os parâmetros de consulta para atender às suas necessidades de pesquisa, filtragem e ordenação. Lembre-se de ajustar as configurações em config/maximus.php conforme necessário.
 
 Fique à vontade para explorar mais funcionalidades da API e adaptá-la conforme suas necessidades. Para quaisquer dúvidas ou problemas, não hesite em entrar em contato com nossa equipe de suporte.
-
-
-
